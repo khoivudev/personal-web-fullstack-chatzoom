@@ -1,0 +1,211 @@
+/*Chat layout*/
+
+a {
+    text-decoration: none;
+}
+
+
+/* Room Page */
+
+.room-container {
+    min-height: 200px;
+    background-color: #000;
+    background-image: linear-gradient(62deg, #3a3d40 0%, #181719 100%);
+    color: var(--main-white);
+    padding: 80px 250px 40px 250px;
+    position: relative;
+}
+
+.room-container a:hover {
+    color: var(--main-white);
+}
+
+.room-container h1 {
+    font-size: 30px;
+    color: var(--main-red);
+}
+
+.room-container .btn {
+    background-color: var(--main-red);
+}
+
+.join-container .btn {
+    background-color: var(--main-red);
+}
+
+.room-header {
+    color: var(--main-gray);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+}
+
+.room-main {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    padding: 30px 40px;
+    background: white;
+}
+
+.room-sidebar {
+    background: var(--main-red);
+    color: #fff;
+    padding: 20px 20px 60px;
+    overflow-y: scroll;
+}
+
+.room-sidebar h2 {
+    font-size: 20px;
+    background: rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.room-sidebar h3 {
+    margin-bottom: 15px;
+}
+
+.room-sidebar ul li {
+    padding: 10px 0;
+}
+
+.room-messages {
+    height: 320px;
+    overflow-y: scroll;
+    border-width: 0.5px;
+    border-style: solid;
+    border-color: var(--main-gray);
+    border-radius: 1%;
+}
+
+.room-messages .message {
+    margin: 5px;
+    background-color: white;
+    border-radius: 10px;
+    overflow-wrap: break-word;
+    max-width: 520px;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+}
+
+.server {
+    background-color: #f1f0f0;
+    border-radius: 1.3em;
+}
+
+.client {
+    background-color: rgb(0, 153, 255);
+    border-radius: 1.3em;
+}
+
+.room-messages .message .meta {
+    font-size: 12px;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 7px;
+}
+
+.room-container li {
+    font-size: 14px;
+}
+
+.room-messages .message .text {
+    font-size: 14px;
+    color: var(--main-black);
+}
+
+.room-messages .message .meta span {
+    color: black;
+}
+
+.room-form-container {
+    width: 100%;
+    padding: 20px 30px;
+    background: white;
+}
+
+.room-form-container form {
+    display: flex;
+}
+
+.room-form-container input[type='text'] {
+    font-size: 16px;
+    padding: 5px;
+    height: 40px;
+    flex: 1;
+    float: right;
+}
+
+
+/* Join Page */
+
+.join-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: #000;
+    background-image: linear-gradient(62deg, #3a3d40 0%, #181719 100%);
+}
+
+.join-header {
+    text-align: center;
+    padding: 20px;
+    background: var(--dark-color-a);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.join-main {
+    padding: 30px 40px;
+    background: var(--main-white);
+}
+
+.join-main p {
+    margin-bottom: 20px;
+}
+
+.join-main .form-control {
+    margin-bottom: 20px;
+}
+
+.join-main label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.join-main input[type='text'] {
+    font-size: 16px;
+    padding: 5px;
+    height: 40px;
+    width: 100%;
+}
+
+.join-main select {
+    font-size: 16px;
+    padding: 5px;
+    height: 40px;
+    width: 100%;
+}
+
+.join-main .btn {
+    margin-top: 20px;
+    width: 100%;
+}
+
+@media (max-width: 700px) {
+    .chat-main {
+        display: block;
+    }
+    .chat-sidebar {
+        display: none;
+    }
+}
