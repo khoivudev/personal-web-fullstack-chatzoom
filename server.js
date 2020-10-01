@@ -4,7 +4,6 @@ const mongoose = require("mongoose");
 const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
-const expressLayouts = require("express-ejs-layouts");
 const flash = require("connect-flash");
 require("dotenv/config");
 
@@ -40,8 +39,7 @@ const server = http.createServer(app);
 const io = require("socket.io")(server);
 
 // view engine setup
-//app.set('views', path.join(__dirname, 'views'));
-app.use(expressLayouts);
+app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 app.use(logger("dev"));
 
