@@ -19,13 +19,17 @@
     font-size: 1.5rem;
 }
 
-.login-container label {
-    font-size: 1.5rem;
-}
-
 .login-container .btn-git {
-    font-size: 1.5rem;
     background-color: #444;
     border-color: rgba(0, 0, 0, 0.2);
     color: var(--main-white) !important;
+}
+
+.login-container label,
+input,
+.btn-git,
+p,
+a,
+.alert {
+    font-size: 17px !important;
 }

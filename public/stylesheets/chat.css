@@ -82,32 +82,35 @@ a {
     border-radius: 1%;
 }
 
-.room-messages .message {
-    margin: 5px;
-    background-color: white;
-    border-radius: 10px;
-    overflow-wrap: break-word;
-    max-width: 520px;
-    width: fit-content;
+.room-messages {
     display: flex;
     flex-direction: column;
-    list-style: none;
+}
+
+.message {
+    margin-top: 2px;
+    padding: 2px;
+    max-width: 300px;
+    width: fit-content;
+    overflow-wrap: break-word;
 }
 
 .server {
     background-color: #f1f0f0;
     border-radius: 1.3em;
+    color: black;
 }
 
 .client {
-    background-color: rgb(0, 153, 255);
+    background-color: #0084ff;
     border-radius: 1.3em;
+    align-self: flex-end;
+    color: #fff;
 }
 
 .room-messages .message .meta {
     font-size: 12px;
     font-weight: bold;
-    color: black;
     margin-bottom: 7px;
 }
 
@@ -117,12 +120,9 @@ a {
 
 .room-messages .message .text {
     font-size: 14px;
-    color: var(--main-black);
 }
 
-.room-messages .message .meta span {
-    color: black;
-}
+.room-messages .message .meta span {}
 
 .room-form-container {
     width: 100%;
