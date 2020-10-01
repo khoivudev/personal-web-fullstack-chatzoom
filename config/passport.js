@@ -31,36 +31,41 @@ module.exports = function (passport) {
     })
   );
 
-  // passport.use(
-  //     new GitHubStrategy({
-  //             clientID: process.env.GITHUB_CLIENT_ID,
-  //             clientSecret: process.env.GITHUB_CLIENT_SECRET,
-  //             callbackURL: "https://vuhuykhoi.herokuapp.com/user/auth/github/callback"
-  //         },
-  //         async(accessToken, refreshToken, profile, done) => {
-  //             console.log(profile);
-  //             //Database logic here with callback containing our user object
-  //             const newUser = {
-  //                 githubId: profile.id,
-  //                 username: profile.displayName || 'A github User',
-  //                 photo: profile.photos[0].value || '',
-  //                 email: Array.isArray(profile.emails) ? profile.emails[0].value : 'No public email',
-  //                 provider: profile.provider || ''
-  //             }
+  passport.use(
+    new GitHubStrategy(
+      {
+        clientID: process.env.GITHUB_CLIENT_ID,
+        clientSecret: process.env.GITHUB_CLIENT_SECRET,
+        callbackURL:
+          "https://vhk-chatzoom.herokuapp.com/user/auth/github/callback",
+      },
+      async (accessToken, refreshToken, profile, done) => {
+        console.log(profile);
+        //Database logic here with callback containing our user object
+        const newUser = {
+          githubId: profile.id,
+          username: profile.displayName || "A github User",
+          photo: profile.photos[0].value || "",
+          email: Array.isArray(profile.emails)
+            ? profile.emails[0].value
+            : "No public email",
+          provider: profile.provider || "",
+        };
 
-  //             try {
-  //                 let user = await User.findOne({ githubId: profile.id });
-  //                 if (user) {
-  //                     done(null, user);
-  //                 } else {
-  //                     user = await User.create(newUser);
-  //                     done(null, user);
-  //                 }
-  //             } catch (err) {
-  //                 console.log(err);
-  //             }
-  //         }
-  //     ));
+        try {
+          let user = await User.findOne({ githubId: profile.id });
+          if (user) {
+            done(null, user);
+          } else {
+            user = await User.create(newUser);
+            done(null, user);
+          }
+        } catch (err) {
+          console.log(err);
+        }
+      }
+    )
+  );
 
   passport.serializeUser((user, done) => {
     done(null, user._id);
